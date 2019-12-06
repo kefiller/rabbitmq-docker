@@ -1,0 +1,13 @@
+[Unit]
+Description=Rabbitmq container
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStartPre=-/srv/rabbitmq/rabbitmq_stop.sh
+ExecStart=/srv/rabbitmq/rabbitmq_start.sh
+
+[Install]
+WantedBy=multi-user.target
