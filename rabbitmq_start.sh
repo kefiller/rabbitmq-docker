@@ -32,6 +32,7 @@ docker run \
     -p 15674-15675:15674-15675 \
     -p 15692:15692 \
     -v $SCRIPT_ORIGDIR/data:/var/lib/rabbitmq \
+    -v $SCRIPT_ORIGDIR/config/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf \
     -e RABBITMQ_ERLANG_COOKIE='IrFCimStSQUkwt5opBiw' \
     -e RABBITMQ_NODENAME=rabbit@$HOSTNAME \
     rabbitmq:management $@
